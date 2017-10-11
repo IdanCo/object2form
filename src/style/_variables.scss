@@ -1,0 +1,7 @@
+// A collection of all variables to be easily imported via
+// @import "variables"
+// (see https://github.com/angular/angular-cli/blob/master/docs/documentation/stories/global-styles.md)
+
+@import "~bootstrap/scss/functions"; // necessary for next file
+@import "~bootstrap/scss/variables"; // Bootstrap's native variables
+@import "custom"; // overrides to bootstrap's native variables
