@@ -1,7 +1,7 @@
 import {Transformer} from "./transformer";
 
-export class AngularBootstrapTransformer implements Transformer {
-  name = 'Angular & Bootstrap 4';
+export class AngularBootstrap3Transformer implements Transformer {
+  name = 'Angular & Bootstrap 3';
   settings = [{
     key: 'validations',
     label: 'add bootstrap validation classes',
