@@ -9,17 +9,9 @@ import {Transformer} from "./transformers/transformer";
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
-  transformers: Array<Transformer>;
-  transformer: Transformer;
-
-  constructor(private transformersService: TransformersService) {}
+  constructor() {}
 
   ngOnInit() {
-    this.transformers = this.transformersService.getTransformers();
-  }
-
-  setTransformer(transformer: Transformer) {
-    this.transformer = transformer;
   }
 
 }

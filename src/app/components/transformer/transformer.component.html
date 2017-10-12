@@ -1,12 +1,12 @@
 <div class="card">
   <div class="card-header text-white bg-primary ">1. Choose Transformer</div>
   <div class="card-body">
-    <div class="form-check" *ngFor="let transformer of transformers">
-      <label class="form-check-label">
-        <input class="form-check-input" type="radio" name="transformer" [(ngModel)]="chosenTransformer" [value]="transformer">
-        {{ transformer.name }}
-      </label>
-    </div>
+      <div class="form-check" *ngFor="let transformer of transformers">
+        <label class="form-check-label">
+          <input class="form-check-input" type="radio" name="transformer" [(ngModel)]="chosenTransformer" (change)="setTransformer(transformer)" [value]="transformer">
+          {{ transformer.name }}
+        </label>
+      </div>
     <p class="card-text text-muted small">Only one transformer right now :-\ Help us and contribute more transformers.</p>
   </div>
 </div>
