@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {TransformersService} from "../../services/transformers.service";
+import {Transformer} from "../../transformers/transformer";
 
 @Component({
   selector: 'app-transformer-settings',
@@ -6,10 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./transformer-settings.component.scss']
 })
 export class TransformerSettingsComponent implements OnInit {
+  transformer: Transformer;
 
-  constructor() { }
+  constructor(private transformersService: TransformersService) { }
 
   ngOnInit() {
+    this.transformersService.getCurrentTransformer().subscribe(
+      (transformer) => this.transformer = JSON.parse(JSON.stringify(transformer))
+    );
+  }
+
+  updateSettings() {
+    this.transformersService.setCurrentTransformer(this.transformer);
   }
 
 }

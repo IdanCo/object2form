@@ -1,6 +1,13 @@
 <div class="card">
   <div class="card-header text-white bg-primary ">2. Adjust Settings</div>
   <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+    <form (change)="updateSettings(f)" #f="ngForm">
+      <div class="form-check" *ngFor="let setting of transformer.settings">
+        <label class="form-check-label">
+          <input class="form-check-input" type="checkbox" [(ngModel)]="setting.value" [name]="setting.key">
+          {{ setting.label }}
+        </label>
+      </div>
+    </form>
   </div>
 </div>
