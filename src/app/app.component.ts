@@ -9,9 +9,16 @@ import {Transformer} from "./transformers/transformer";
   encapsulation: ViewEncapsulation.None
 })
 export class AppComponent implements OnInit {
+  sourceObject = {};
+
   constructor() {}
 
   ngOnInit() {
+  }
+
+  setSourceObject(sourceObject) {
+    console.info(sourceObject);
+    this.sourceObject = sourceObject;
   }
 
 }

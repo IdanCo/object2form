@@ -1,6 +1,10 @@
 <div class="card">
   <div class="card-header text-white bg-primary ">3. Paste Object</div>
   <div class="card-body">
+    <div class="form-group">
+      <label for="sourceObject">Example textarea</label>
+      <textarea class="form-control" id="sourceObject" rows="10" [(ngModel)]="rawSourceObject" (change)="updateSourceObject()"></textarea>
+    </div>
     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
   </div>
 </div>

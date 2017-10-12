@@ -36,7 +36,7 @@
       <app-transformer-settings></app-transformer-settings>
     </div>
     <div class="col-6">
-      <app-object></app-object>
+      <app-object (sourceObjectChanged)="setSourceObject($event)"></app-object>
     </div>
     <div class="col-6">
       <app-result></app-result>
