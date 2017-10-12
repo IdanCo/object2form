@@ -6,6 +6,8 @@ import { TransformerComponent } from './components/transformer/transformer.compo
 import { TransformerSettingsComponent } from './components/transformer-settings/transformer-settings.component';
 import { ObjectComponent } from './components/object/object.component';
 import { ResultComponent } from './components/result/result.component';
+import {TransformersService} from "./services/transformers.service";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -16,9 +18,10 @@ import { ResultComponent } from './components/result/result.component';
     ResultComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule
   ],
-  providers: [],
+  providers: [TransformersService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
