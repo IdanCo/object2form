@@ -20,13 +20,12 @@ export class AngularBootstrap3Transformer implements Transformer {
 
   getFormControl(key, value): string {
     return `
-  <div class="form-group">
+  <div class="form-group" [ngClass]={'has-error': ${key}.invalid && ${key}.touched}">
     <label for="${key}">${key}</label>
     <input type="text" class="form-control" id="${key}"
        ngModel name="${key}" #${key}="ngModel"
-       [ngClass]="{'is-invalid': id.invalid && id.touched}"
        required>
-    <div class="invalid-feedback">Invalid value</div>
+    <span class="help-block" *ngIf="${key}.invalid && ${key}.touched}">Invalid value</span>
   </div>
     `;
   }
