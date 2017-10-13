@@ -14,7 +14,7 @@ export class TransformerSettingsComponent implements OnInit {
 
   ngOnInit() {
     this.transformersService.getCurrentTransformer().subscribe(
-      (transformer) => this.transformer = JSON.parse(JSON.stringify(transformer))
+      (transformer) => this.transformer = transformer
     );
   }
 
