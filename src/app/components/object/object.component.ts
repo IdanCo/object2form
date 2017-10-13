@@ -13,12 +13,13 @@ const DEFAULT_SOURCE_OBJECT =
 })
 export class ObjectComponent implements OnInit {
   @Output() sourceObjectChanged = new EventEmitter();
-  rawSourceObject: string = '';
+  rawSourceObject = '';
 
   constructor() { }
 
   ngOnInit() {
     this.rawSourceObject = DEFAULT_SOURCE_OBJECT;
+    this.updateSourceObject();
   }
 
   updateSourceObject() {
