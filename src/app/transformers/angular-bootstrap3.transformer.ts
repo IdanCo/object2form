@@ -9,7 +9,8 @@ export class AngularBootstrap3Transformer implements Transformer {
   }];
 
   getFormHeader(): string {
-    return `<form (ngSubmit)="onSubmit(f)" #f="ngForm">`;
+    return `<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+`;
   }
 
   getFormFooter(): string {
@@ -20,7 +21,7 @@ export class AngularBootstrap3Transformer implements Transformer {
 
   getFormControl(key, value): string {
     return `
-  <div class="form-group" [ngClass]={'has-error': ${key}.invalid && ${key}.touched}">
+  <div class="form-group" [ngClass]="{'has-error': ${key}.invalid && ${key}.touched}">
     <label for="${key}">${key}</label>
     <input type="text" class="form-control" id="${key}"
        ngModel name="${key}" #${key}="ngModel"

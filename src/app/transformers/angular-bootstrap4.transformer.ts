@@ -9,8 +9,7 @@ export class AngularBootstrap4Transformer implements Transformer {
   }];
 
   getFormHeader(): string {
-    let result = `
-<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+    let result = `<form (ngSubmit)="onSubmit(f)" #f="ngForm">
 `;
     return result;
   }
