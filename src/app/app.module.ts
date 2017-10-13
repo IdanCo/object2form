@@ -8,6 +8,7 @@ import { ObjectComponent } from './components/object/object.component';
 import { ResultComponent } from './components/result/result.component';
 import {TransformersService} from "./services/transformers.service";
 import {FormsModule} from "@angular/forms";
+import { HighlightJsModule } from 'angular2-highlight-js';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {FormsModule} from "@angular/forms";
   ],
   imports: [
     BrowserModule,
-    FormsModule
+    FormsModule,
+    HighlightJsModule
   ],
   providers: [TransformersService],
   bootstrap: [AppComponent]

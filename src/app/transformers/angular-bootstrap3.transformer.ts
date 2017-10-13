@@ -22,7 +22,7 @@ export class AngularBootstrap3Transformer implements Transformer {
     return `
   <div class="form-group">
     <label for="${key}">${key}</label>
-    <input type="text" class="form-control" id="id"
+    <input type="text" class="form-control" id="${key}"
        ngModel name="${key}" #${key}="ngModel"
        [ngClass]="{'is-invalid': id.invalid && id.touched}"
        required>
