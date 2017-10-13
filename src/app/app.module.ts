@@ -8,7 +8,12 @@ import { ObjectComponent } from './components/object/object.component';
 import { ResultComponent } from './components/result/result.component';
 import {TransformersService} from "./services/transformers.service";
 import {FormsModule} from "@angular/forms";
-import { HighlightJsModule } from 'angular2-highlight-js';
+import {HighlightModule, HighlightOptions} from "ngx-highlightjs";
+
+const options: HighlightOptions = {
+  theme: 'github-gist',
+  path: 'assets/hljs'
+};
 
 @NgModule({
   declarations: [
@@ -21,7 +26,7 @@ import { HighlightJsModule } from 'angular2-highlight-js';
   imports: [
     BrowserModule,
     FormsModule,
-    HighlightJsModule
+    HighlightModule.forRoot(options)
   ],
   providers: [TransformersService],
   bootstrap: [AppComponent]
