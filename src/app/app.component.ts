@@ -17,7 +17,6 @@ export class AppComponent implements OnInit {
   }
 
   setSourceObject(sourceObject) {
-    console.info(sourceObject);
     this.sourceObject = sourceObject;
   }
 

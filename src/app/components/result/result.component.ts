@@ -1,15 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {TransformersService} from "../../services/transformers.service";
 
 @Component({
   selector: 'app-result',
   templateUrl: './result.component.html',
   styleUrls: ['./result.component.scss']
 })
-export class ResultComponent implements OnInit {
+export class ResultComponent implements OnInit, OnChanges {
+  @Input() sourceObject;
+  result = '';
 
-  constructor() { }
+  constructor(private transformersService: TransformersService) { }
 
   ngOnInit() {
+    this.transformersService.getCurrentTransformer().subscribe(
+      () => this.renderResult()
+    );
+  }
+
+  ngOnChanges() {
+    this.renderResult();
+  }
+
+  renderResult() {
+    this.result = this.transformersService.processObject(this.sourceObject);
   }
 
 }
