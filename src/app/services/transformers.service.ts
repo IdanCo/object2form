@@ -8,7 +8,8 @@ import {ReplaySubject} from "rxjs/ReplaySubject";
 @Injectable()
 export class TransformersService {
   private transformers: Array<Transformer> = [];
-  private currentTransformer = new ReplaySubject<Transformer>();
+  private transformer: Transformer;
+  private currentTransformerSubject = new ReplaySubject<Transformer>();
 
   constructor() {
     this.registerTransformer(new AngularBootstrap4Transformer());
@@ -24,11 +25,26 @@ export class TransformersService {
   }
 
   setCurrentTransformer(transformer: Transformer) {
-    this.currentTransformer.next(transformer);
+    this.transformer = transformer;
+    this.currentTransformerSubject.next(transformer);
   }
 
   getCurrentTransformer(): Observable<Transformer> {
-    return this.currentTransformer.asObservable();
+    return this.currentTransformerSubject.asObservable();
+  }
+
+  processObject(sourceObject) {
+    let result: string;
+
+    console.info('with', this.transformer);
+
+    result = this.transformer.getFormHeader();
+    for (const key in sourceObject) {
+      result = result + this.transformer.getFormControl(key, sourceObject[key]);
+    }
+    result = result + this.transformer.getFormFooter();
+
+    return result;
   }
 
 }

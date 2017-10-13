@@ -9,7 +9,10 @@ export class AngularBootstrap4Transformer implements Transformer {
   }];
 
   getFormHeader(): string {
-    return `<form (ngSubmit)="onSubmit(f)" #f="ngForm">`;
+    let result = `
+<form (ngSubmit)="onSubmit(f)" #f="ngForm">
+`;
+    return result;
   }
 
   getFormFooter(): string {
@@ -28,7 +31,7 @@ export class AngularBootstrap4Transformer implements Transformer {
        required>
     <div class="invalid-feedback">Invalid value</div>
   </div>
-    `;
+`;
   }
 
 }
