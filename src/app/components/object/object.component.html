@@ -2,9 +2,10 @@
   <div class="card-header text-white bg-primary ">3. Object</div>
   <div class="card-body">
     <div class="form-group">
-      <textarea class="form-control" id="sourceObject" rows="10" [(ngModel)]="rawSourceObject" (change)="updateSourceObject()"></textarea>
+      <textarea class="form-control" id="sourceObject" rows="10" [(ngModel)]="rawSourceObject" [ngClass]="{'is-invalid': !isObjectValid}"></textarea>
+      <div class="invalid-feedback">Data is not a valid javascript object</div>
     </div>
-    <button type="button" class="btn btn-primary float-right">Update</button>
+    <button type="button" class="btn btn-primary float-right" (click)="updateSourceObject()">Update</button>
 
   </div>
 </div>

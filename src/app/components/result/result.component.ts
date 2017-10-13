@@ -23,7 +23,11 @@ export class ResultComponent implements OnInit, OnChanges {
   }
 
   renderResult() {
-    this.result = this.transformersService.processObject(this.sourceObject);
+    if (this.sourceObject) {
+      this.result = this.transformersService.processObject(this.sourceObject);
+    } else {
+      this.result = 'Please use a valid object';
+    }
   }
 
 }

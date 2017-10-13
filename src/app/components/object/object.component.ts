@@ -14,6 +14,7 @@ const DEFAULT_SOURCE_OBJECT =
 export class ObjectComponent implements OnInit {
   @Output() sourceObjectChanged = new EventEmitter();
   rawSourceObject = '';
+  isObjectValid = true;
 
   constructor() { }
 
@@ -23,8 +24,16 @@ export class ObjectComponent implements OnInit {
   }
 
   updateSourceObject() {
+    let sourceObject;
+
     // const sourceObject = JSON.parse(this.rawSourceObject);
-    const sourceObject = JSON.parse(JSON.stringify(eval('(' + this.rawSourceObject + ')')));
+    try {
+      sourceObject = JSON.parse(JSON.stringify(eval('(' + this.rawSourceObject + ')')));
+      this.isObjectValid = true;
+    } catch (e) {
+      this.isObjectValid = false;
+    }
+
     this.sourceObjectChanged.emit(sourceObject);
   }
 
