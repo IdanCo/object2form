@@ -1,1 +1,7 @@
 // overrides to bootstrap's native styling rules
+
+@include media-breakpoint-down(md) {
+  .card {
+    margin-bottom: 2rem;
+  }
+}

@@ -21,18 +21,18 @@
 <div class="container">
   <!-- Example row of columns -->
   <div class="row align-items-stretch mb-5">
-    <div class="col-6">
+    <div class="col-md-6">
       <app-transformer></app-transformer>
     </div>
-    <div class="col-6">
+    <div class="col-md-6">
       <app-transformer-settings></app-transformer-settings>
     </div>
   </div>
   <div class="row">
-    <div class="col-6">
+    <div class="col-md-6">
       <app-object (sourceObjectChanged)="setSourceObject($event)"></app-object>
     </div>
-    <div class="col-6">
+    <div class="col-md-6">
       <app-result [sourceObject]="sourceObject"></app-result>
     </div>
   </div>
