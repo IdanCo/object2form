@@ -67,8 +67,7 @@ export class AngularBootstrap4Transformer implements Transformer {
   <div class="form-check">
     <label class="form-check-label">
       <input type="checkbox" class="form-check-input" id="${key}"
-       ngModel name="${key}" #${key}="ngModel"
-       [ngClass]="{'is-invalid': ${key}.invalid && ${key}.touched}">
+       ngModel name="${key}" #${key}="ngModel">
       ${key}
     </label>
   </div>

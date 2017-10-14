@@ -1,5 +1,5 @@
 import {Component, Input, OnChanges, OnInit} from '@angular/core';
-import {TransformersService} from "../../services/transformers.service";
+import {TransformersService} from "../../transformers/transformers.service";
 
 @Component({
   selector: 'app-result',

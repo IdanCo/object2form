@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {TransformersService} from "../../services/transformers.service";
+import {TransformersService} from "../../transformers/transformers.service";
 import {Transformer} from "../../transformers/transformer";
 
 @Component({

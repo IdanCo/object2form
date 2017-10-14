@@ -1,8 +1,8 @@
 import { Injectable } from '@angular/core';
-import {Transformer} from "../transformers/transformer";
-import {AngularBootstrap4Transformer} from "../transformers/angular-bootstrap4.transformer";
+import {Transformer} from "./transformer";
+import {AngularBootstrap4Transformer} from "./angular-bootstrap4.transformer";
 import {Observable} from "rxjs/Observable";
-import {AngularBootstrap3Transformer} from "../transformers/angular-bootstrap3.transformer";
+import {AngularBootstrap3Transformer} from "./angular-bootstrap3.transformer";
 import {ReplaySubject} from "rxjs/ReplaySubject";
 
 @Injectable()

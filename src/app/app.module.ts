@@ -6,7 +6,7 @@ import { TransformerComponent } from './components/transformer/transformer.compo
 import { TransformerSettingsComponent } from './components/transformer-settings/transformer-settings.component';
 import { ObjectComponent } from './components/object/object.component';
 import { ResultComponent } from './components/result/result.component';
-import {TransformersService} from "./services/transformers.service";
+import {TransformersService} from "./transformers/transformers.service";
 import {FormsModule} from "@angular/forms";
 import {HighlightModule, HighlightOptions} from "ngx-highlightjs";
 

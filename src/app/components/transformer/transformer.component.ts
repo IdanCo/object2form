@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {Transformer} from "../../transformers/transformer";
-import {TransformersService} from "../../services/transformers.service";
+import {TransformersService} from "../../transformers/transformers.service";
 
 @Component({
   selector: 'app-transformer',
