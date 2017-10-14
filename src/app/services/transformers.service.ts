@@ -36,8 +36,6 @@ export class TransformersService {
   processObject(sourceObject) {
     let result: string;
 
-    console.info('with', this.transformer);
-
     result = this.transformer.getFormHeader();
     for (const key in sourceObject) {
       result = result + this.transformer.getFormControl(key, sourceObject[key]);

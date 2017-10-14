@@ -22,7 +22,6 @@ export class AngularBootstrap4Transformer implements Transformer {
 
   getFormControl(key, value): string {
     let result;
-    console.info();
 
     switch(typeof(value)) {
       case 'boolean':
