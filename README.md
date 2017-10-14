@@ -21,4 +21,4 @@ If your intereseted in more transformers, open an issue or contribute - it's eas
 
 ## Questions?
 
-feel free to open an issue or twitt me at https://twitter.com/Idan_Co
+feel free to open an issue or [tweet me](https://twitter.com/Idan_Co)
