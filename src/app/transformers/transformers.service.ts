@@ -1,9 +1,10 @@
 import { Injectable } from '@angular/core';
-import {Transformer} from "./transformer";
-import {AngularBootstrap4Transformer} from "./angular-bootstrap4.transformer";
-import {Observable} from "rxjs/Observable";
-import {AngularBootstrap3Transformer} from "./angular-bootstrap3.transformer";
-import {ReplaySubject} from "rxjs/ReplaySubject";
+import { Observable } from 'rxjs/Observable';
+import { ReplaySubject } from 'rxjs/ReplaySubject';
+import { Transformer } from './transformer';
+import { AngularBootstrap4Transformer } from './angular-bootstrap4.transformer';
+import { AngularBootstrap3Transformer } from './angular-bootstrap3.transformer';
+import { AngularMaterialTransformer } from './angular-material.transformer';
 
 @Injectable()
 export class TransformersService {
@@ -14,6 +15,7 @@ export class TransformersService {
   constructor() {
     this.registerTransformer(new AngularBootstrap4Transformer());
     this.registerTransformer(new AngularBootstrap3Transformer());
+    this.registerTransformer(new AngularMaterialTransformer());
   }
 
   registerTransformer(transformer) {
