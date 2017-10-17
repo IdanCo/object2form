@@ -2,10 +2,14 @@ import { Transformer } from './transformer';
 
 export class AngularMaterialTransformer implements Transformer {
     name = 'Angular & Angular Material';
-    settings = [];
+    settings = [{
+        key: 'validations',
+        label: 'add material validation',
+        value: true
+    }];
 
     getFormHeader(): string {
-        return  `<form (ngSubmit)="onSubmit(f)" #f="ngForm">`;
+        return `<form (ngSubmit)="onSubmit(f)" #f="ngForm">`;
     }
 
     getFormFooter(): string {
@@ -31,15 +35,32 @@ export class AngularMaterialTransformer implements Transformer {
 
     renderTextControl(key) {
         let result;
+        const validations = this.settings.find(e => e.key === 'validations');
 
-        result = `
+        if (validations.value) {
+
+            result = `
 
     <div>
         <mat-form-field>
             <input matInput placeholder="${key}" id="${key}"
-            ngModel name="${key}" #${key}="ngModel" required>
+            [(ngModel)]="${key}" name="${key}"  [formControl]="${key}FormControl">
+            <mat-error *ngIf="${key}FormControl.invalid">
+                Invalid value.
+            </mat-error>
         </mat-form-field>
     </div>`;
+
+        } else {
+            result = `
+
+        <div>
+            <mat-form-field>
+                <input matInput placeholder="${key}" id="${key}"
+                [(ngModel)]="${key}" name="${key}" required>
+            </mat-form-field>
+        </div>`;
+        }
 
         return result;
     }
@@ -50,7 +71,7 @@ export class AngularMaterialTransformer implements Transformer {
         result = `
 
     <div>
-        <mat-checkbox id="${key}"  ngModel name="${key}" #${key}="ngModel">
+        <mat-checkbox id="${key}" [(ngModel)]="${key}" name="${key}">
         ${key}
         </mat-checkbox>
     </div>`;
