@@ -4,6 +4,7 @@ import { ReplaySubject } from 'rxjs/ReplaySubject';
 import { Transformer } from './transformer';
 import { AngularBootstrap4Transformer } from './angular-bootstrap4.transformer';
 import { AngularBootstrap3Transformer } from './angular-bootstrap3.transformer';
+import { JadeBootstrap3Transformer } from './jade-bootstrap3.transformer';
 import { AngularMaterialTransformer } from './angular-material.transformer';
 
 @Injectable()
@@ -15,6 +16,7 @@ export class TransformersService {
   constructor() {
     this.registerTransformer(new AngularBootstrap4Transformer());
     this.registerTransformer(new AngularBootstrap3Transformer());
+    this.registerTransformer(new JadeBootstrap3Transformer());
     this.registerTransformer(new AngularMaterialTransformer());
   }
 

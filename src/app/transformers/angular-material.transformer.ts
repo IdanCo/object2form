@@ -33,7 +33,6 @@ export class AngularMaterialTransformer implements Transformer {
         let result;
 
         result = `
-
     <div>
         <mat-form-field>
             <input matInput placeholder="${key}" id="${key}"
