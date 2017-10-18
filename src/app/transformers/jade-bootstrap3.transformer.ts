@@ -33,10 +33,12 @@ export class JadeBootstrap3Transformer implements Transformer {
     if (a === "boolean"){
       result = `
           .form-group
-            .input-group
-              span.input-group-addon
-                input(type='checkbox')
-              input#${key}.form-control(type='text')
+            label.col-md-2.control-label ${key}
+            .col-md-10
+              .input-group
+                span.input-group-addon
+                  input#${key}(type='checkbox')
+                input#${key}txt.form-control(type='text')
     `;
   } else {
     if (value == "***"){
