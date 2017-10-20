@@ -7,6 +7,8 @@ Easily convert your javascript object to a full blown HTML form with all the fan
 Currently we support the following frameworks/libraries:
 - Angular (>2) with Bootstrap 4
 - Angular (>2) with Bootstrap 3
+- Angular (>2) with Angular Material
+- Angular (>2) with Semantic UI
 
 If your intereseted in more transformers, open an issue or contribute - it's easy!
 
@@ -16,7 +18,7 @@ If your intereseted in more transformers, open an issue or contribute - it's eas
 2. `npm install` and all that jazz
 3. Duplicate one of the current transformers and have your way with it.
 4. Register your new transformer in `src/app/transformers/transformers.service.ts`
-5. `ng serve` to test your new creation
+5. `ng serve` to test your new creation (Make sure you have the [angular-cli](https://github.com/angular/angular-cli) installed)
 6. Create a PR and be proud!
 
 ## Questions?
