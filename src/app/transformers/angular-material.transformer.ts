@@ -40,7 +40,6 @@ export class AngularMaterialTransformer implements Transformer {
         if (validations.value) {
 
             result = `
-
     <div>
         <mat-form-field>
             <input matInput placeholder="${key}" id="${key}"
