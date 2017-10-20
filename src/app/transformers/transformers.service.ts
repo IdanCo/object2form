@@ -5,6 +5,7 @@ import { Transformer } from './transformer';
 import { AngularBootstrap4Transformer } from './angular-bootstrap4.transformer';
 import { AngularBootstrap3Transformer } from './angular-bootstrap3.transformer';
 import { AngularMaterialTransformer } from './angular-material.transformer';
+import { AngularSemanticTransformer } from './angular-semantic.transformer';
 
 @Injectable()
 export class TransformersService {
@@ -16,6 +17,7 @@ export class TransformersService {
     this.registerTransformer(new AngularBootstrap4Transformer());
     this.registerTransformer(new AngularBootstrap3Transformer());
     this.registerTransformer(new AngularMaterialTransformer());
+    this.registerTransformer(new AngularSemanticTransformer());
   }
 
   registerTransformer(transformer) {
